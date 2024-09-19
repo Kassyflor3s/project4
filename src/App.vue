@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue'
-import FortuneStats from './components/FortuneStats.vue';
 import FortuneCustomizer from './components/FortuneCustomizer.vue';
 import YesorNo from './components/YesorNo.vue';
+import FortuneAdvice from './components/FortuneAdvice.vue';
+
+import { ref } from 'vue'
 
 const fortunes = ref([
   "Luck is the residue of design.",
@@ -37,15 +38,20 @@ const addCustomFortune = (newFortune) => {
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <h2>GENIE WISH</h2>
     <img src="/darkgenie1.jpg" alt="Genie" class="genie-image">
-    <p>{{ fortuneMessage }}</p>
-    <button @click="generateFortune">PRESS FOR FORTUNE</button>
-    <button @click="resetFortune">RESET</button>
 
-    <YesorNo />
+    <div class="fortune-section">
+      <p id="fortune">{{ fortuneMessage }}</p>
+      <button @click="generateFortune">PRESS FOR FORTUNE</button>
+      <button @click="resetFortune">RESET</button>
+    </div>
+
     <FortuneCustomizer @addFortune="addCustomFortune" />
-    <FortuneStats :history="fortuneHistory" />
+    <h2>___________________________</h2>
+    <YesorNo />
+    <h3>___________________________</h3>
+    <FortuneAdvice />
   </div>
 </template>

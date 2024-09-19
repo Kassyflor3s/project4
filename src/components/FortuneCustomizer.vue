@@ -14,8 +14,8 @@ const addCustomFortune = () => {
 
 <template>
   <div>
-    <h3>Add your own Fortune</h3>
-    <input v-model="newFortune" type="text" placeholder="Custom fortune" />
+    <h3>Add Your Fortune</h3>
+    <input type="text" id="NewFortune" v-model="newFortune" placeholder="Custom fortune" />
     <button @click="addCustomFortune">Add</button>
   </div>
 </template>
